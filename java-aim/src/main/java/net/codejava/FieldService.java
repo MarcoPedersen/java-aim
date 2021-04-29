@@ -13,16 +13,16 @@ public class FieldService {
     @Autowired
     private FieldRepository repo;
 
-    public List<FieldModel> listAll() {
+    public List<Field> listAll() {
         return repo.findAll();
     }
 
 
-    public void save(FieldModel fieldModel) {
-        repo.save(fieldModel);
+    public void save(Field field) {
+        repo.save(field);
     }
 
-    public FieldModel get(Integer id) { return repo.findById(id).get(); }
+    public Field get(Integer id) { return repo.findById(id).get(); }
 
     public void delete(Integer id) { repo.deleteById(id); }
 }

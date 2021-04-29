@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Field Manager</title>
+</head>
+<body>
+<div align="center">
+  <h1>Fields List</h1>
+  <a href="/">Return to the index</a>
+  <a href="/new">Create a New Field</a>
+  <br/><br/>
+  <table border="1" cellpadding="10">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rules</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="field : ${listFields}">
+      <td th:text="${field.name}">Name</td>
+      <td th:text="${field.location}">Brand</td>
+      <td th:text="${field.rules}">Made in</td>
+      <td th:text="${field.email}">Price</td>
+      <td th:text="${field.phone}">Price</td>
+      <td th:text="${field.website}">Price</td>
+
+      <td>
+        <a th:href="@{'/edit/' + ${field.id}}">Edit</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{'/delete/' + ${field.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -17,31 +17,36 @@ public class FieldController {
     @Autowired
     private FieldService service;
 
+
     @RequestMapping("/")
-    public String viewHomePage(Model model) {
-        List<FieldModel> listFields = service.listAll();
+    public String viewHomePage() {
+        return "index";
+    }
+    @RequestMapping("/fieldsList")
+    public String showFieldsList(Model model) {
+        List<Field> listFields = service.listAll();
         model.addAttribute("listFields", listFields);
 
-        return "index";
+        return "field_list";
     }
     @RequestMapping("/new")
     public String showNewFieldPage(Model model) {
-        FieldModel fieldModel = new FieldModel();
-        model.addAttribute("fieldModel", fieldModel);
+        Field field = new Field();
+        model.addAttribute("field", field);
 
-        return "new field";
+        return "new_field";
     }
-    @RequestMapping(value= "/save", method = RequestMethod.POST)
-    public String saveField(@ModelAttribute("FieldModel") FieldModel fieldModel) {
-        service.save(fieldModel);
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String saveField(@ModelAttribute("field") Field field) {
+        service.save(field);
 
         return "redirect:/";
     }
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditFieldPage(@PathVariable(name = "id") int id) {
-        ModelAndView mav = new ModelAndView("edit field");
-        FieldModel fieldModel = service.get(id);
-        mav.addObject("fieldModel", fieldModel);
+        ModelAndView mav = new ModelAndView("edit_field");
+        Field field = service.get(id);
+        mav.addObject("field", field);
 
         return mav;
     }
