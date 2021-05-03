@@ -10,22 +10,20 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-public class Field {
+public class User {
     private int id;
-    private String name;
-    private String location;
-    private String rules;
+    private String first_name;
+    private String last_name;
+    private String username;
     private String email;
-    private String phone;
-    private String website;
+    private String password;
+    private int role_id;
     @CreationTimestamp
     private LocalDateTime created_at;
     @UpdateTimestamp
     private LocalDateTime updated_at;
-    private String latitude;
-    private String longitude;
 
-    public Field() {
+    public User() {
     }
 
     @Id
@@ -39,28 +37,28 @@ public class Field {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public String getRules() {
-        return rules;
+    public String getUsername() {
+        return username;
     }
 
-    public void setRules(String rules) {
-        this.rules = rules;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -71,20 +69,20 @@ public class Field {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getWebsite() {
-        return website;
+    public int getRole_id() {
+        return role_id;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
     }
 
     public LocalDateTime getCreated_at() {
@@ -101,21 +99,5 @@ public class Field {
 
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 }

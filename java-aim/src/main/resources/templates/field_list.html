@@ -9,7 +9,7 @@
 <div align="center">
   <h1>Fields List</h1>
   <a href="/">Return to the index</a>
-  <a href="/new">Create a New Field</a>
+  <a href="/newField">Create a New Field</a>
   <br/><br/>
   <table border="1" cellpadding="10">
     <thead>
@@ -33,9 +33,9 @@
       <td th:text="${field.website}">Price</td>
 
       <td>
-        <a th:href="@{'/edit/' + ${field.id}}">Edit</a>
+        <a th:href="@{'/editField/' + ${field.id}}">Edit</a>
         &nbsp;&nbsp;&nbsp;
-        <a th:href="@{'/delete/' + ${field.id}}">Delete</a>
+        <a th:href="@{'/deleteField/' + ${field.id}}">Delete</a>
       </td>
     </tr>
     </tbody>

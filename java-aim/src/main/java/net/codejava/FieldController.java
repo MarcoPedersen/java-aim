@@ -29,20 +29,20 @@ public class FieldController {
 
         return "field_list";
     }
-    @RequestMapping("/new")
+    @RequestMapping("/newField")
     public String showNewFieldPage(Model model) {
         Field field = new Field();
         model.addAttribute("field", field);
 
         return "new_field";
     }
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveField", method = RequestMethod.POST)
     public String saveField(@ModelAttribute("field") Field field) {
         service.save(field);
 
         return "redirect:/";
     }
-    @RequestMapping("/edit/{id}")
+    @RequestMapping("/editField/{id}")
     public ModelAndView showEditFieldPage(@PathVariable(name = "id") int id) {
         ModelAndView mav = new ModelAndView("edit_field");
         Field field = service.get(id);
@@ -50,7 +50,7 @@ public class FieldController {
 
         return mav;
     }
-    @RequestMapping("/delete/{id}")
+    @RequestMapping("/deleteField/{id}")
     public String deleteField(@PathVariable(name = "id") int id) {
         service.delete(id);
         return "redirect:/";

@@ -2,5 +2,5 @@ package net.codejava;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FieldRepository extends JpaRepository<Field, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 }

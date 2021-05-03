@@ -8,20 +8,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class FieldService {
+public class UserService {
 
     @Autowired
-    private FieldRepository repo;
+    private UserRepository repo;
 
-    public List<Field> listAll() {
+    public List<User> listAll() {
         return repo.findAll();
     }
 
-    public void save(Field field) {
-        repo.save(field);
+    public void save(User user) {
+        repo.save(user);
     }
 
-    public Field get(Integer id) {
+    public User get(Integer id) {
         return repo.findById(id).get();
     }
 
