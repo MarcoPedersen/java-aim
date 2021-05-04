@@ -40,7 +40,7 @@ public class FieldController {
     public String saveField(@ModelAttribute("field") Field field) {
         service.save(field);
 
-        return "redirect:/";
+        return "redirect:/fieldsList";
     }
     @RequestMapping("/editField/{id}")
     public ModelAndView showEditFieldPage(@PathVariable(name = "id") int id) {
@@ -53,6 +53,6 @@ public class FieldController {
     @RequestMapping("/deleteField/{id}")
     public String deleteField(@PathVariable(name = "id") int id) {
         service.delete(id);
-        return "redirect:/";
+        return "redirect:/fieldsList";
     }
 }
