@@ -21,6 +21,10 @@ public class FieldService {
         repo.save(field);
     }
 
+    public void update(Field field, int id) {
+        repo.save(field);
+    }
+
     public Field get(Integer id) {
         return repo.findById(id).get();
     }

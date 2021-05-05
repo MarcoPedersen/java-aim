@@ -9,9 +9,9 @@
 <div align="center">
   <h1>Edit User</h1>
   <br />
-  <form action="#" th:action="@{/saveUser}" th:object="${user}"
+  <form action="#" th:action="@{/updateUser}" th:object="${user}"
         method="post">
-
+    <input type="hidden" th:field="*{id}" >
     <table border="0" cellpadding="10">
       <tr>
         <td>First name:</td>
