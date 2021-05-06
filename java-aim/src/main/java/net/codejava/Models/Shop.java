@@ -1,4 +1,4 @@
-package net.codejava;
+package net.codejava.Models;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -10,11 +10,10 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-public class Field {
+public class Shop {
     private int id;
     private String name;
     private String location;
-    private String rules;
     private String email;
     private String phone;
     private String website;
@@ -25,7 +24,7 @@ public class Field {
     private String latitude;
     private String longitude;
 
-    public Field() {
+    public Shop() {
     }
 
     @Id
@@ -53,14 +52,6 @@ public class Field {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public String getRules() {
-        return rules;
-    }
-
-    public void setRules(String rules) {
-        this.rules = rules;
     }
 
     public String getEmail() {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Shop Manager</title>
+</head>
+<body>
+<div align="center">
+  <h1>Shops List</h1>
+  <a href="/">Return to the index</a>
+  <a href="/newShop">Create a New Shop</a>
+  <br/><br/>
+  <table border="1" cellpadding="10">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="shop : ${listShops}">
+      <td th:text="${shop.name}">Name</td>
+      <td th:text="${shop.location}">Location</td>
+      <td th:text="${shop.email}">Email</td>
+      <td th:text="${shop.phone}">Phone</td>
+      <td th:text="${shop.website}">Website</td>
+
+      <td>
+        <a th:href="@{'/editShop/' + ${shop.id}}">Edit</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{'/deleteShop/' + ${shop.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

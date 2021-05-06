@@ -1,4 +1,4 @@
-package net.codejava;
+package net.codejava.Models;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

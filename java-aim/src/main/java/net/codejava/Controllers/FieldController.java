@@ -1,5 +1,7 @@
-package net.codejava;
+package net.codejava.Controllers;
 
+import net.codejava.Models.Field;
+import net.codejava.Services.FieldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
